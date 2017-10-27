@@ -7,9 +7,12 @@ const findUser = (id) => {
       id
     }, (err, document) => {
       if (err) {
+        console.log(`Error finding user: ${id}`);        
+        console.error(error);        
         return reject(error);
       }
 
+      console.log(`Found user: ${id}`);
       return resolve(document);
     });
   })
@@ -91,7 +94,27 @@ const findOrCreate = (user) => {
   });
 };
 
+const removeUser = (id) => {
+  return new Promise((resolve, reject) => {
+    findUser(id)
+      .then(user => {
+        if (user) {
+          DB.users.remove({
+            id
+          }, (err, numberUpdated) => {
+            if (err) {
+              return reject(err);
+            }
+
+            return resolve(numberUpdated)
+          })
+        }
+      });
+  });
+};
+
 export default {
   findUser,
-  findOrCreate
+  findOrCreate,
+  removeUser
 };

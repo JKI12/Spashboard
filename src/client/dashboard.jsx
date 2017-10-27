@@ -14,6 +14,7 @@ class Dashboard extends React.Component {
           <li><a href="/?time_frame=long_term">All time</a></li>
           <li><a href="/?time_frame=medium_term">Past 6 months</a></li>
           <li><a href="/?time_frame=short_term">Past 4 weeks</a></li>
+          <li><a href="/logout">Logout!</a></li>
         </ul>
         <TopArtists {...this.props.artists} />
         <TopTracks {...this.props.tracks} />

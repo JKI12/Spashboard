@@ -16,12 +16,14 @@ class TopStats extends React.Component {
   render() {
     return(
       <div className="c-top">
-        <div className="c-top-box__top">
-          { this.profile }
-        </div>
-        <div className="divider" />
-        <div className="c-top-box__bottom">
-          { this.features }
+        <div className="c-top__content">
+          <div className="c-top-box__top">
+            { this.profile }
+          </div>
+          <div className="divider" />
+          <div className="c-top-box__bottom">
+            { this.features }
+          </div>
         </div>
       </div>
     );

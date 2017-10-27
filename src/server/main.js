@@ -11,7 +11,6 @@ import moment from 'moment';
 import reactRender from './middleware/react-render';
 import spotifyDataMiddleware from './middleware/spotify-data';
 import storeMiddleware from './middleware/store';
-import axiosMiddleware from './middleware/axios';
 import tokenExpired from './middleware/token-expired';
 import { SPOTIFY_SETTINGS } from '../shared/constants';
 import errorView from './view/error';
@@ -69,7 +68,8 @@ app.use(passport.session());
 
 router.get('/auth/spotify',
   passport.authenticate('spotify', {
-    scope: ['user-read-recently-played', 'user-top-read']
+    scope: ['user-read-recently-played', 'user-top-read'],
+    showDialog: true
   })
 );
 
@@ -80,7 +80,8 @@ router.get('/callback',
   })
 );
 
-router.get('/logout', (ctx) => {
+router.get('/logout', async (ctx) => {
+  await usersDB.removeUser(ctx.state.user.id);
   ctx.logout();
   ctx.redirect('/');
 });

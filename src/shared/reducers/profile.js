@@ -17,7 +17,7 @@ export default (state = initalState, action) => {
         name: profile.display_name,
         country: profile.country,
         followers: profile.followers.total,
-        profileImage: profile.images[0].url
+        profileImage: profile.images.length > 0 ? profile.images[0].url : 'https://www.vccircle.com/wp-content/uploads/2017/03/default-profile.png'
       };
     case REQUEST_PROFILE_ERROR:
       return {
