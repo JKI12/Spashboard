@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
   render() {
     return(
       <div className="c-dashboard">
-        <h1>Spashboard</h1>
+        <h1>Spotboard</h1>
         <ul className="time-frames">
           <li><a href="/?time_frame=long_term">All time</a></li>
           <li><a href="/?time_frame=medium_term">Past 6 months</a></li>
