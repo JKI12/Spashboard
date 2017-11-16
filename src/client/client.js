@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import reducers from '../shared/reducers';
 import Dashboard from './dashboard';
 
-import './style.scss';
+import './styles/index.scss';
 
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
