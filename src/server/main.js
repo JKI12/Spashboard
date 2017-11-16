@@ -12,8 +12,10 @@ import reactRender from './middleware/react-render';
 import spotifyDataMiddleware from './middleware/spotify-data';
 import storeMiddleware from './middleware/store';
 import tokenExpired from './middleware/token-expired';
+import scraperDetect from './middleware/scraper-detect'
 import { SPOTIFY_SETTINGS } from '../shared/constants';
 import errorView from './view/error';
+import metatagView from './view/metatags';
 import usersDB from './db/users';
 
 const app = new koa();
@@ -90,7 +92,11 @@ router.get('/error', (ctx) => {
   ctx.body = errorView();
 });
 
-router.get('/', tokenExpired, storeMiddleware, spotifyDataMiddleware, reactRender);
+router.get('/tags', (ctx) => {
+  ctx.body = metatagView();
+});
+
+router.get('/', scraperDetect, tokenExpired, storeMiddleware, spotifyDataMiddleware, reactRender);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
