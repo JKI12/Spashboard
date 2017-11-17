@@ -1,3 +1,5 @@
+import analytics from './analytics';
+
 export default () => {
   return `
     <!doctype html>
@@ -11,6 +13,7 @@ export default () => {
         <p>There has been an error logging in</p>
         <a href='/'>Try again</a>
       </body>
+      ${analytics()}
     </html>
   `;
 };

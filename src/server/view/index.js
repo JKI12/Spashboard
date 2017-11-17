@@ -1,3 +1,5 @@
+import analytics from './analytics';
+
 export default (html, preloadedState) => {
   return `
     <!doctype html>
@@ -14,6 +16,7 @@ export default (html, preloadedState) => {
         </script>
         <script src="/static/bundle.js"></script>
       </body>
+      ${analytics()}
     </html>
   `;
 };

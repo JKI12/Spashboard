@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import TopArtists from './components/top-artists';
 import TopTracks from './components/top-tracks';
 import TopStats from './components/top-stats';
+import CookieBanner from './components/cookie-banner';
 
 class Dashboard extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Dashboard extends React.Component {
         <TopArtists {...this.props.artists} />
         <TopTracks {...this.props.tracks} />
         <TopStats profile={this.props.profile} features={this.props.features} />
+        <CookieBanner />
       </div>
     );
   }

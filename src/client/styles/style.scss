@@ -139,4 +139,52 @@ a {
       }
     }
   }
+
+  .c-cookie-banner {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #2B3249;
+
+    .c-cookie-banner__contents {
+      color: white;
+      p {
+        margin: 0;
+        float: left;
+        padding: 12px;
+      }
+      
+      a {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .c-cookie-banner__button {
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        max-width: 148px;
+        padding: 4px;
+        float: right;
+        margin-right: 32px;
+
+        a {
+          color: rgb(255, 255, 255);
+          background-color: transparent;
+          border-color: rgb(255, 255, 255);
+          padding: .4em .8em;
+          min-width: 140px;
+          font-size: .9em;
+          font-weight: 700;
+          border-width: 2px;
+          border-style: solid;
+          text-align: center;
+          white-space: nowrap;
+          flex: 1;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
