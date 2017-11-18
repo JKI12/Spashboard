@@ -13,6 +13,8 @@ class TopArtists extends React.Component {
       return this.props.top.map((artist, index) => {
         return <TopArtistItem key={index} {...artist} ranking={index + 1} />
       });
+    } else {
+      return <p>No top artists, this is generally because you haven't had Spotify for around a year - Try the other tabs above</p>
     }
   }
 

@@ -13,6 +13,8 @@ class TopTracks extends React.Component {
       return this.props.top.map((track, index) => {
         return <TopTrackItem key={index} {...track} ranking={index + 1} />
       });
+    } else {
+      return  <p>No top tracks, this is generally because you haven't had Spotify for around a year - Try the other tabs above</p>
     }
   }
 

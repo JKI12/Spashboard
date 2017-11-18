@@ -5,7 +5,7 @@ class CookieBanner extends React.Component {
     super();
 
     this.state = {
-      seenCookieBanner: false
+      seenCookieBanner: true
     };
 
     this.dismissCookieBanner = this.dismissCookieBanner.bind(this);
